@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+    <link rel="icon" href="/static/WFRS.ico">
+    <!-- Title Page-->
+    <title>Depression Detector V1.0.1</title>
+
+    <!-- Icons font CSS-->
+    <link href="/static/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="/static/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="/static/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="/static/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <!-- <link href="/static/loader.css" rel="stylesheet"> -->
+    <link href="/static/css/main.css" rel="stylesheet" media="all">
+</head>
+<style>
+    .lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  align-items: center;
+  align-self: center;
+  text-align: center;
+}
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid black;
+  border-color: black transparent black transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+  align-items: center;
+  align-self: center;
+  text-align: center;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>
+<script>
+    function load() {
+        document.getElementById("loader").style.display = "";
+    }
+</script>
+<body>
+
+    <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+        <div name = "white" class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <div class="lds-dual-ring" id="loader"></div>
+                    <h2 class="title">รายละเอียดการทดสอบ <i class="fa fa-info-circle" style="font-size:36px"></i></h2>
+                    <form method="POST" action="/measure">
+                        {{csrf_token}}
+                        <h3>ในการทดสอบ ผู้เข้ารับการทดสอบจะได้ดูรูปภาพตามความเหมาะสมของ
+                            ลักษณะคลื่นสมองส่วนบุคคล ซึ่งการทดสอบจะใช้เวลาประมาณ 5-10 นาที
+                        </h3>
+                    </br>
+                        <p style="color:red;">* ผู้เข้ารับการทดสอบจำเป็นต้องสวมเครื่องวัดคลื่นสมองชนิด EEG</p>
+                    </br>
+  
+                        <div class="p-t-15">
+                            <button class="btn btn--radius-2 btn--blue" type="submit" onclick="load()">เริ่มทำแบบทดสอบ</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <script src = "/static/loader.js"></script> -->
+    <!-- Jquery JS-->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="/static/vendor/select2/select2.min.js"></script>
+    <script src="/static/vendor/datepicker/moment.min.js"></script>
+    <script src="/static/vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="/static/js/global.js"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+<script>
+    document.getElementById("loader").style.display = "none";
+</script>
+</html>
+<!-- end document-->
